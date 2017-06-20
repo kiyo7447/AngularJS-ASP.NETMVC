@@ -1,25 +1,25 @@
-﻿@{
-    PageData["title"] = "AngularJS SPA | About";
-}
-<h2>About Us</h2>
-<p>Demo page.</p>
+﻿<script>
 
 
-<script>
+	console.log('html load ok!');
+	var app = angular.module('app.controllers');
 
-	//app.config(function ($controllerProvider) {
-	//	app.controller = function (name, controller) {
-	//		$controllerProvider.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
-	//			$scope.$root.title = '2AngularJS SPA | About';
-	//			$scope.$on('$viewContentLoaded', function () {
-	//				$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
-	//			});
-	//		}]);
-	//	}
-	//});
-
-	//console.log('app' + app);
-
-
+	app.$controllerProvider.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+		$scope.$root.title = '22AngularJS SPA | About';
+		$scope.ok = '22hogehoge';
+		$scope.$on('$viewContentLoaded', function () {
+			console.log('22viewContentLoaded About');
+			$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+		})
+	}]);
 
 </script>
+
+@{
+    PageData["title"] = "2AngularJS SPA | About";
+}
+<div >
+	<h2>About Us</h2>
+	<p>Demo page.</p>
+	{{ok}}
+</div>
