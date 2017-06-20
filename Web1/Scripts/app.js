@@ -19,7 +19,7 @@ angular.module('app', ['ui.router', 'app.filters', 'app.services', 'app.directiv
             })
             .state('about', {
                 url: '/about',
-                templateUrl: '/views/about2',
+                templateUrl: '/views/about',
                 controller: 'AboutCtrl'
             })
             .state('login', {
