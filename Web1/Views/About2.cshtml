@@ -1,0 +1,25 @@
+﻿@{
+    PageData["title"] = "AngularJS SPA | About";
+}
+<h2>About Us</h2>
+<p>Demo page2.</p>
+
+
+<script>
+
+	app.config(function ($controllerProvider) {
+		app.controller = function (name, controller) {
+			$controllerProvider.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+				$scope.$root.title = '2AngularJS SPA | About';
+				$scope.$on('$viewContentLoaded', function () {
+					$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+				});
+			}]);
+		}
+	});
+
+	console.log('app' + app);
+
+
+
+</script>
