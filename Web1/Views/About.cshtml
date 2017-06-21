@@ -1,6 +1,6 @@
 ﻿<script>
 
-	function initController() {
+	(function initController() {
 		console.log('About.html load ok!');
 		var app = angular.module('app.controllers');
 
@@ -12,9 +12,7 @@
 				$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
 			})
 		}]);
-	}
-
-	//$(initController());
+	})();
 
 </script>
 
