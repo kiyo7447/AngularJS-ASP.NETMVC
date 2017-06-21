@@ -3,16 +3,16 @@
 // Google Analytics Collection APIs Reference:
 // https://developers.google.com/analytics/devguides/collection/analyticsjs/
 
-console.log('load controller');
+console.log('load app.controllers');
 
 var app = angular.module('app.controllers', []);
 	app
 	// Path: /
     .controller('HomeCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
-        $scope.$root.title = 'AngularJS SPA Template for Visual Studio';
-        $scope.test = 'test!';
+        $scope.$root.title = 'Home Title';
+        $scope.message = 'Hello Home Page';
         $scope.$on('$viewContentLoaded', function () {
-        	console.log('viewContentLoaded');
+        	console.log('viewContentLoaded Home Controller');
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
     }])
@@ -26,6 +26,16 @@ var app = angular.module('app.controllers', []);
     //    	$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
     //    });
     //}])
+
+    // Path: /contacts
+    .controller('ContactsCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+        $scope.$root.title = 'Contacts Title';
+        $scope.message = 'Hello Contacts Page!';
+        $scope.$on('$viewContentLoaded', function () {
+        	console.log('viewContentLoaded Contacts');
+        	$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+        });
+    }])
 
     // Path: /login
     .controller('LoginCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {

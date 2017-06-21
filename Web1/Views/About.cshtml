@@ -1,25 +1,28 @@
 ﻿<script>
 
+	function initController() {
+		console.log('About.html load ok!');
+		var app = angular.module('app.controllers');
 
-	console.log('html load ok!');
-	var app = angular.module('app.controllers');
+		app.$controllerProvider.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+			$scope.$root.title = 'About Title';
+			$scope.message = 'Hello About Page';
+			$scope.$on('$viewContentLoaded', function () {
+				console.log('viewContentLoaded About Controller');
+				$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+			})
+		}]);
+	}
 
-	app.$controllerProvider.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
-		$scope.$root.title = '22AngularJS SPA | About';
-		$scope.ok = '22hogehoge';
-		$scope.$on('$viewContentLoaded', function () {
-			console.log('22viewContentLoaded About');
-			$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
-		})
-	}]);
+	//$(initController());
 
 </script>
 
 @{
-    PageData["title"] = "2AngularJS SPA | About";
+	PageData["title"] = "2AngularJS SPA | About";
 }
-<div >
+<div>
 	<h2>About Us</h2>
 	<p>Demo page.</p>
-	{{ok}}
+	{{message}}
 </div>
