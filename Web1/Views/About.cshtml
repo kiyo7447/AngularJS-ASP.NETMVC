@@ -5,8 +5,8 @@
 		var app = angular.module('app.controllers');
 
 		app.$controllerProvider.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
-			$scope.$root.title = 'About Title';
-			$scope.message = 'Hello About Page';
+			$scope.$root.title = 'About Title | Set Angular';
+			$scope.message = 'Hello About Page | Set Angular MVC';
 			$scope.$on('$viewContentLoaded', function () {
 				console.log('viewContentLoaded About Controller');
 				$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
@@ -19,7 +19,7 @@
 </script>
 
 @{
-	PageData["title"] = "2AngularJS SPA | About";
+	PageData["title"] = "About Title | Set ASP.NET";
 }
 <div>
 	<h2>About Us</h2>
