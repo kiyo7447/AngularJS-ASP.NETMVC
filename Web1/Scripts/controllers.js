@@ -27,14 +27,14 @@ angular.module('app.controllers', [])
     //}])
 
     // Path: /contacts
-    .controller('ContactsCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
-    	$scope.$root.title = 'Contacts Title | Set Angular';
-    	$scope.message = 'Hello Contacts Page! | Set Angular MVC';
-    	$scope.$on('$viewContentLoaded', function () {
-    		console.log('viewContentLoaded Contacts');
-    		$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
-    	});
-    }])
+    //.controller('ContactsCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+    //	$scope.$root.title = 'Contacts Title | Set Angular';
+    //	$scope.message = 'Hello Contacts Page! | Set Angular MVC';
+    //	$scope.$on('$viewContentLoaded', function () {
+    //		console.log('viewContentLoaded Contacts');
+    //		$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+    //	});
+    //}])
 
     // Path: /login
     .controller('LoginCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
@@ -62,7 +62,7 @@ var app = angular.module('app.controllers');
 app.config(['$controllerProvider', function ($controllerProvider) {
 		app.$controllerProvider = $controllerProvider;
 
-		//これは動いた
+	//これは動いた（ただし、Angular ui-routerの場合のみ）
 		//app.con.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
 		//	$scope.$root.title = '22AngularJS SPA | About';
 		//	$scope.ok = '22hogehoge';
@@ -73,7 +73,7 @@ app.config(['$controllerProvider', function ($controllerProvider) {
 		//}]);
 	}]);
 
-//これも動いた
+//これも動いた（ただし、Angular ui-routerの場合のみ）
 //	var app = angular.module('app.controllers');
 //app.con.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
 //	$scope.$root.title = '22AngularJS SPA | About';
@@ -83,4 +83,19 @@ app.config(['$controllerProvider', function ($controllerProvider) {
 //		$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
 //	})
 //}]);
+
+
+//これは動いた（両ルータでも動く）
+//var app = angular.module('app.controllers');
+//app.controller('ContactsCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+//	$scope.$root.title = 'Contacts Title | Set Angular';
+//	$scope.message = 'Hello Contacts Page! | Set Angular MVC';
+//	$scope.$on('$viewContentLoaded', function () {
+//		console.log('viewContentLoaded Contacts');
+//		$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+//	});
+//}])
+
+
+
 
