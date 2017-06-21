@@ -73,6 +73,21 @@ app.config(['$controllerProvider', function ($controllerProvider) {
 		//}]);
 	}]);
 
+app.addController = function (name, callbackDefinition, isAjaxRequest) {
+	if (isAjaxRequest) {
+		console.log('controllerProvider');
+		app.$controllerProvider.register(name, callbackDefinition);
+	} else {
+		console.log('controller');
+		app.controller(name, callbackDefinition);
+	}
+};
+app.test = function (name) {
+	console.log('ok:' + name);
+	return 'ok';
+}
+
+
 //これも動いた（ただし、Angular ui-routerの場合のみ）
 //	var app = angular.module('app.controllers');
 //app.con.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
