@@ -60,10 +60,7 @@
 
 	@Scripts.Render("~/js/app")
 
-
-	<div id="ui-view" class="container" ui-view data-tmpl-url="@Request.RequestContext.RouteData.DataTokens["templateUrl"]">
-		@RenderBody()
-	</div>
+	@RenderBody()
 
 </body>
 </html>

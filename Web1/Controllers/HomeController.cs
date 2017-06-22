@@ -20,10 +20,10 @@ namespace App.Web1.Controllers
 			}
 			else
 			{
-				return View("None");
+				return View("None", new { });
 			}
 		}
-		public ActionResult About(string ajax = "false")
+		public ActionResult About(string ajax = "false", string param = "")
 		{
 			ViewBag.Ajax = ajax;
 			if (ajax == "true")
@@ -32,7 +32,7 @@ namespace App.Web1.Controllers
 			}
 			else
 			{
-				return View("None",new { name = "abe" });
+				return View("None",new { name = "abe", param = param });
 			}
 		}
 		public ActionResult Contacts(string ajax = "false")

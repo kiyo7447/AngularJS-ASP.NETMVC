@@ -1,1 +1,5 @@
-﻿
+﻿<script>
+	var param = '@Model?.param';
+</script>
+<div id="ui-view" class="container" ui-view data-tmpl-url="@Request.RequestContext.RouteData.DataTokens["templateUrl"]">
+</div>
