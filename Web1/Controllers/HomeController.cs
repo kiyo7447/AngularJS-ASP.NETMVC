@@ -12,6 +12,7 @@ namespace App.Web1.Controllers
 		// GET: Home
 		public ActionResult Index(string ajax = "false")
 		{
+			Debug.WriteLine("Request.IsAjaxRequest()=" + Request.IsAjaxRequest());
 			ViewBag.Ajax = ajax;
 			if (ajax == "true")
 			{

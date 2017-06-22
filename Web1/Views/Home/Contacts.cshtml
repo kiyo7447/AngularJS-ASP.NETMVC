@@ -3,7 +3,7 @@
 
 	console.log('Contacts.html load ok!');
 
-	var app = angular.module('app.controllers');
+	var app = angular.module('app');
 	app.addController('ContactsCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
 		$scope.$root.title = 'Contacts Title | Set Angular';
 		$scope.message = 'Hello Contacts Page! | Set Angular MVC';

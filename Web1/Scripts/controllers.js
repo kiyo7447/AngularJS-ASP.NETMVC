@@ -5,7 +5,7 @@
 
 console.log('load app.controllers');
 
-angular.module('app.controllers', [])
+angular.module('app', ['ui.router'])
     // Path: /
     .controller('HomeCtrl', ['$scope', '$location', '$window',
 		function ($scope, $location, $window) {
@@ -59,7 +59,7 @@ angular.module('app.controllers', [])
         });
     }]);
 
-var app = angular.module('app.controllers');
+var app = angular.module('app');
 
 app.config(['$controllerProvider', function ($controllerProvider) {
     app.$controllerProvider = $controllerProvider;
