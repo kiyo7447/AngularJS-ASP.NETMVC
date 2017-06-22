@@ -23,7 +23,7 @@ namespace App.Web1
 			bundles.Add(new ScriptBundle("~/js/angular").Include(
 				"~/scripts/angular.min.js",
 				"~/scripts/angular-ui-router.min.js",
-				"~/scripts/angular-cookeis.min.js"));
+				"~/scripts/angular-cookies.min.js"));
 
 			bundles.Add(new ScriptBundle("~/js/app").Include(
 				"~/scripts/filters.js",

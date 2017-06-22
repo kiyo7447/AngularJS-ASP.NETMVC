@@ -3,17 +3,16 @@
 // Google Analytics Collection APIs Reference:
 // https://developers.google.com/analytics/devguides/collection/analyticsjs/
 
-console.log('load app.controllers');
+console.log('load controllers.js');
 
-angular.module('app', ['ui.router'])
+angular.module('app', ['ui.router', 'ngCookies'])
     // Path: /
-    .controller('HomeCtrl', ['$scope', '$location', '$window',
-		function ($scope, $location, $window) {
+    .controller('HomeCtrl', ['$scope', '$location', '$window', '$cookies',function ($scope, $location, $window, $cookies) {
         $scope.$root.title = 'Home Title | Set Angular';
         $scope.message = 'Hello Home Page! | Set Angular MVC';
         $scope.$on('$viewContentLoaded', function () {
         	console.log('viewContentLoaded Home Controller');
-        	//$cookies.put('home-cookie', 'home-cookie-value', { exprires: new Date() });
+        	$cookies.put('home-cookie', 'home-cookie-value', { exprires: new Date() });
         	//$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
     }])
@@ -63,7 +62,6 @@ var app = angular.module('app');
 
 app.config(['$controllerProvider', function ($controllerProvider) {
     app.$controllerProvider = $controllerProvider;
-
     //これは動いた（ただし、Angular ui-routerの場合のみ）
     //app.con.register('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
     //    $scope.$root.title = '22AngularJS SPA | About';
