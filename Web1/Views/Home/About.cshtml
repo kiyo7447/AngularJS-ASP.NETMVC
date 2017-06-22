@@ -4,12 +4,21 @@
 	console.log('About.html load ok!');
 	var app = angular.module('app.controllers');
 
-	app.addController('AboutCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+	//app.addController('AboutCtrl', ['$scope', '$location', '$window', '$cookies',
+	//function ($scope, $location, $window, $cookies) {
+	app.addController('AboutCtrl', ['$scope', '$location', '$window',
+	function ($scope, $location, $window) {
 		$scope.$root.title = 'About Title | Set Angular';
 		$scope.message = 'Hello About Page | Set Angular MVC';
+		$scope.cookie = 'cookie text';
+		$scope.onClick = function (e) {
+			console.log('onClick()');
+			//$cookies.put('cookie', $scope.cookie, {exprires:new Date()});
+		}
 		$scope.$on('$viewContentLoaded', function () {
 			console.log('viewContentLoaded About Controller');
 			//$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+			//$scope.cookie = $cookies.get('cookie');
 		})
 	}], isAjaxRequest);
 
@@ -22,4 +31,7 @@
 	<h2>About Us</h2>
 	<p>Demo page.</p>
 	{{message}}
+
+	<input type="text" value="{{cookie}}"/>
+	<button ng-click="onClick()">Cookieに保存する</button>
 </div>

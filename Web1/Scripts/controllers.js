@@ -7,11 +7,13 @@ console.log('load app.controllers');
 
 angular.module('app.controllers', [])
     // Path: /
-    .controller('HomeCtrl', ['$scope', '$location', '$window', function ($scope, $location, $window) {
+    .controller('HomeCtrl', ['$scope', '$location', '$window',
+		function ($scope, $location, $window) {
         $scope.$root.title = 'Home Title | Set Angular';
         $scope.message = 'Hello Home Page! | Set Angular MVC';
         $scope.$on('$viewContentLoaded', function () {
-            console.log('viewContentLoaded Home Controller');
+        	console.log('viewContentLoaded Home Controller');
+        	//$cookies.put('home-cookie', 'home-cookie-value', { exprires: new Date() });
         	//$window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
     }])
