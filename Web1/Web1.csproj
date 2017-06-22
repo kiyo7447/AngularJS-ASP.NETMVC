@@ -1046,6 +1046,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\None.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

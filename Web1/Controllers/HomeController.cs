@@ -20,7 +20,7 @@ namespace App.Web1.Controllers
 			}
 			else
 			{
-				return View();
+				return View("None");
 			}
 		}
 		public ActionResult About(string ajax = "false")
@@ -32,7 +32,7 @@ namespace App.Web1.Controllers
 			}
 			else
 			{
-				return View(new { name = "abe" });
+				return View("None",new { name = "abe" });
 			}
 		}
 		public ActionResult Contacts(string ajax = "false")
@@ -44,7 +44,7 @@ namespace App.Web1.Controllers
 			}
 			else
 			{
-				return View(new { name = "abe" });
+				return View("None",new { name = "abe" });
 			}
 		}
 	}
