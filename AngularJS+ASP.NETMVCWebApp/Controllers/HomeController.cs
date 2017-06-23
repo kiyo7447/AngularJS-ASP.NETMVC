@@ -12,6 +12,10 @@ namespace App.Web1.Controllers
 		// GET: Home
 		public ActionResult Index(string ajax = "false")
 		{
+			var cookie = Request.Cookies["home-cookie"];
+			if (cookie != null) { 
+				Debug.WriteLine($"homeVlaue={cookie.Value}");
+			}
 			Debug.WriteLine("Request.IsAjaxRequest()=" + Request.IsAjaxRequest());
 			ViewBag.Ajax = ajax;
 			if (ajax == "true")
